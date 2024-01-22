@@ -111,7 +111,7 @@ class OT2Env(gym.Env):
                 reward = 1000  # Large reward for reaching the goal
                 terminated = True
             else:
-                reward = improvement*10  # Reward is proportional to improvement
+                reward = 1 if improvement > 0 else -1
                 terminated = False
 
             # Check for truncation
